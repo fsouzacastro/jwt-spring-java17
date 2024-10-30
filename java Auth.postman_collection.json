@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "62759412-bcf1-49fe-8e5a-46073b8b0ad6",
+		"name": "java Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8675089"
+	},
+	"item": [
+		{
+			"name": "inserir usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJwaXp6dXJnLWFwaSIsImlhdCI6MTczMDIxNTQ3NiwiZXhwIjoxNzMwMjI5ODc2LCJzdWIiOiJqb2FvQGhvdG1haWwuY29tIn0.s2UDZnicoM-MFTDygSkrorM5YVIcUiFXB3XUgmpAcc0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"maria@hotmail.com\",\n\t\"password\": \"123456\",\n    \"cpf\": \"123.456.785-00\",\n    \"nome\": \"João da Silva\",\n    \"dataNascimento\": \"26/10/1990\",\n    \"endereco\": {\n        \"rua\": \"Rua Exemplo\",\n        \"numero\": \"123\",\n        \"bairro\": \"Centro\",\n        \"cidade\": \"São Paulo\",\n        \"estado\": \"SP\",\n        \"cep\": \"01000-000\"\n    },\n    \"roles\": \"ROLE_MEDICO\",\n    \"status\": \"ATIVO\",\n    \"dataCriacao\": \"26/10/2024 15:30:45\",\n    \"usuarioCriacao\": \"admin\",\n    \"dataAtualizacao\": \"26/10/2024 15:30:45\",\n    \"usuarioAtualizacao\": \"admin\",\n    \"dataExclusao\": null,\n    \"usuarioExclusao\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuario/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletar usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/usuario/delete/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "alterar usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"joao@hotmail.com\",\n\t\"password\": \"123456\",\n    \"cpf\": \"123.456.222-00\",\n    \"nome\": \"João da Silva\",\n    \"dataNascimento\": \"26/10/1990\",\n    \"endereco\": {\n        \"rua\": \"Rua Exemplooooo\",\n        \"numero\": \"123\",\n        \"bairro\": \"Centro\",\n        \"cidade\": \"São Paulo\",\n        \"estado\": \"SP\",\n        \"cep\": \"01000-000\"\n    },\n    \"status\": \"ATIVO\",\n    \"dataCriacao\": \"26/10/2024 15:30:45\",\n    \"usuarioCriacao\": \"admin\",\n    \"dataAtualizacao\": \"26/10/2024 15:30:45\",\n    \"usuarioAtualizacao\": \"admin\",\n    \"dataExclusao\": null,\n    \"usuarioExclusao\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuario/update/12",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"update",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/usuario/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar todos os usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/usuario/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"joao@hotmail.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuario/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "exclusao logica",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsImlhdCI6MTczMDI0MzQ4NywiZXhwIjoxNzMwMjU3ODg3LCJzdWIiOiJhZG1pbkBhZG1pbiJ9.nFmkVjwzGZYiUDYw4J7htYWnn6D0bhoCtXPglBrh4Rc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/usuario/exclusao/15",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"exclusao",
+						"15"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
